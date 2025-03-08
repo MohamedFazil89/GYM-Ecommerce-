@@ -1,0 +1,35 @@
+html, body{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+}
+
+.Cart-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+
+
+}
+
+.Product-section-title{
+  color: white;
+  font-size: 3rem;
+  margin-left: 1rem;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .Product-section-title{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px){
+  .Product-section-title{
+    font-size: 1.5rem;
+  }
+} 

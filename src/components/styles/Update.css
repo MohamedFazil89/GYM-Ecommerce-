@@ -1,0 +1,132 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Update Container */
+  .Update-Conteiner {
+    margin-top: 25rem;
+    color: white;
+    padding: 1rem;
+  }
+  
+  /* Character Background Section */
+  .charecter-bg {
+    position: relative;
+  }
+  
+  /* Character Image */
+  .charecter-bg > img {
+    position: relative;
+    z-index: 2;
+    width: 18%;
+    /* Optional max-width for very large screens */
+    max-width: 250px;
+  }
+  
+  /* Overlay Section at Bottom */
+  .charecter-bg > .section {
+    position: absolute;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    z-index: 1;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Title Overlaid on Character Background */
+  .charecter-bg > .Title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 6rem;
+    left: 250px;
+    top: 10rem;
+    font-weight: lighter;
+  }
+  
+  /* List Items in the Section */
+  .charecter-bg > .section > li {
+    position: relative;
+    list-style-type: none;
+    z-index: 2;
+    color: black;
+    font-size: 2rem;
+  }
+  
+  /* Selection Styling for List Items */
+  .section > li::selection {
+    color: red;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .Update-Conteiner {
+      margin-top: 15rem;
+    }
+    .charecter-bg > .Title {
+      font-size: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 5rem;
+    }
+    .charecter-bg > img {
+      width: 25%;
+    }
+    .charecter-bg > .section {
+      height: 120px;
+      gap: 2rem;
+    }
+    .charecter-bg > .section > li {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .Update-Conteiner {
+      margin-top: 23rem;
+      padding: 0.5rem;
+    }
+    .charecter-bg > .Title {
+      font-size: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 3rem;
+    }
+    .charecter-bg > img {
+      width: 35%;
+    }
+    .charecter-bg > .section {
+      height: 100px;
+      gap: 1rem;
+    }
+    .charecter-bg > .section > li {
+      font-size: 1.2rem;
+    }
+  }
+
+
+  @media (max-width: 400px) {
+    .charecter-bg > img{
+        width: 30%;
+    }
+    .charecter-bg > .Title{
+        font-size: 1.5rem;
+        width: 90%;
+        left: 60%;
+        top: 10%;
+    }
+    .charecter-bg > .section > li{
+        font-size: 1rem;
+        left: 10%;
+    }
+
+  }
+  
