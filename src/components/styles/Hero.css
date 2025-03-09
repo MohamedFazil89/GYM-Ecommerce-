@@ -21,9 +21,9 @@
 
 
 .Solo {
-    opacity: .5;
+    opacity: 1.5;
     position: absolute;
-    transform: translate(0%, 30%);
+    transform: translate(0%, 20%);
 
 }
 
@@ -36,6 +36,7 @@
     /* filter: drop-shadow(0 1px 100px rgb(254, 255, 255)); */
     cursor: pointer;
     transition: all .5s;
+    margin-top: 10%;
 }
 
 .Hero>h1:hover {

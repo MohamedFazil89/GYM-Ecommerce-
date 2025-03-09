@@ -25,14 +25,14 @@
   .nav-title > img{
     width: 100px;
   }
-  .nav > .nav-list {
+  .nav > .nav-list > .navCheck{
     display: flex;
     gap: 2rem;
   }
-  .nav > .nav-list > li {
+  .nav > .nav-list > .navCheck > li {
     list-style-type: none;
   }
-  .nav > .nav-list > li a {
+  .nav > .nav-list > .navCheck >  li a {
     text-decoration: none;
     color: #efefef;
     cursor: pointer;
@@ -53,6 +53,8 @@
 
 
   @media (max-width: 600px) {
+
+    
     .nav {
       padding: 1rem;
     }
@@ -75,7 +77,7 @@
       height: 10px;
       border-top: 2px solid #eee;
     }
-    .nav > .nav-list {
+    .nav > .nav-list > .navCheck{
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -88,16 +90,16 @@
       left: 0;
       overflow: hidden;
     }
-    .nav > .nav-list > li {
+    .nav > .nav-list > .navCheck > li {
       width: 100%;
       margin-top: 1.5rem;
     }
-    .nav > #nav-check:checked ~ .nav-list {
+    .nav > #nav-check:checked ~ .nav-list > .navCheck {
       height: calc(100vh - 50px);
     }
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 400px){
     .nav-btn{
       margin: 1rem;
     }

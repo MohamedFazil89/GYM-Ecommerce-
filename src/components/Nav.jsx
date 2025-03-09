@@ -19,12 +19,14 @@ export default function Nav() {
       </label>
     </div>
     
-    <ul className="nav-list">
+    <ul className="nav-list" >
+      <label htmlFor="nav-check" className='navCheck'>
       <li><a href="#">Home</a></li>
       <li><a href="#Proteins">Protiens</a></li>
       <li><a href="#Equipment">Equipements</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="#About">About</a></li>
       <li><a href="#">Contact</a></li>
+      </label>
       
     </ul>
   </nav>
