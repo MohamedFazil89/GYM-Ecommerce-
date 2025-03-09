@@ -3,17 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all .5s;
   }
   
   /* Update Container */
   .Update-Conteiner {
     margin-top: 25rem;
     color: white;
+    overflow: hidden;
     padding: 1rem;
+    transition: all 1s;
   }
   
   /* Character Background Section */
   .charecter-bg {
+    cursor: pointer;
+
     position: relative;
   }
   
@@ -24,6 +29,12 @@
     width: 18%;
     /* Optional max-width for very large screens */
     max-width: 250px;
+    cursor: pointer;
+  }
+
+  .charecter-bg:hover > img{
+    margin-left: 65rem;
+
   }
   
   /* Overlay Section at Bottom */
@@ -38,6 +49,8 @@
     gap: 5rem;
     justify-content: center;
     align-items: center;
+    transition: all .5s;
+
   }
   
   /* Title Overlaid on Character Background */
@@ -109,6 +122,11 @@
     }
     .charecter-bg > .section > li {
       font-size: 1.2rem;
+    }
+
+    .charecter-bg:hover > img{
+      margin-left: 15rem;
+  
     }
   }
 

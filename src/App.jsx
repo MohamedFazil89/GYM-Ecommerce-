@@ -5,13 +5,24 @@ import Update from './components/Update'
 import Cart from './components/Cart'
 import CardData from "./components/CartData.js"
 import About from './components/About.jsx'
+import React, { useState, useEffect } from "react";
+import Auth from './Auth.jsx'
 
 function App() {
   const { intakeItems, equipmentItems } = CardData;
+  const [isAuth, setIsAuth] = useState(false);
+
+  useEffect(() => {
+    const authStatus = localStorage.getItem("isAuth");
+    if (authStatus === "true") {
+      setIsAuth(true);
+    }
+  }, []);
 
 
   return (
-    <div>
+    <>
+   {isAuth ? (<div>
       <Nav />
       <Home />
       <Update />
@@ -58,7 +69,10 @@ function App() {
       <About />
       <br />
 
-    </div>
+    </div>) :( 
+    <Auth setIsAuth={setIsAuth} />
+    )}
+    </>
   )
 }
 
