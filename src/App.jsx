@@ -5,25 +5,20 @@ import Update from './components/Update'
 import Cart from './components/Cart'
 import CardData from "./components/CartData.js"
 import About from './components/About.jsx'
-import React, { useState, useEffect } from "react";
 import Auth from './Auth.jsx'
 import Contact from './components/Contact.jsx'
+import { Link } from "react-router-dom";
+
 
 function App() {
   const { intakeItems, equipmentItems } = CardData;
-  const [isAuth, setIsAuth] = useState(false);
 
-  useEffect(() => {
-    const authStatus = localStorage.getItem("isAuth");
-    if (authStatus === "true") {
-      setIsAuth(true);
-    }
-  }, []);
+
 
 
   return (
     <>
-   {isAuth ? (<div>
+ <div>
       <Nav />
       <Home />
       <Update />
@@ -31,7 +26,9 @@ function App() {
       <br />
       <br />
 
-      <p className='Product-section-title'>Explore Our Proteins      </p>
+      <Link to="/Product">
+      <p className='Product-section-title'>Explore Our Proteins</p>
+      </Link>
       <div className="Cart-container" id='Proteins'>
         {intakeItems.map((item, index) =>(
           <Cart
@@ -47,7 +44,9 @@ function App() {
       <br />
       <br />
       <br />
+      <Link to="/ProductE">
       <p className='Product-section-title'>Explore Our Equipment      </p>
+      </Link>
 
       <div className="Cart-container" id='Equipment'>
         {equipmentItems.map((item, index) =>(
@@ -70,9 +69,7 @@ function App() {
       <br />
       <Contact />
 
-    </div>) :( 
-    <Auth setIsAuth={setIsAuth} />
-    )}
+    </div>
     </>
   )
 }
