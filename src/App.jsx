@@ -7,6 +7,7 @@ import CardData from "./components/CartData.js"
 import About from './components/About.jsx'
 import React, { useState, useEffect } from "react";
 import Auth from './Auth.jsx'
+import Contact from './components/Contact.jsx'
 
 function App() {
   const { intakeItems, equipmentItems } = CardData;
@@ -29,7 +30,6 @@ function App() {
       <br />
       <br />
       <br />
-      <br />
 
       <p className='Product-section-title'>Explore Our Proteins      </p>
       <div className="Cart-container" id='Proteins'>
@@ -44,7 +44,6 @@ function App() {
         ))}
 
       </div>
-      <br />
       <br />
       <br />
       <br />
@@ -68,6 +67,8 @@ function App() {
 
       <About />
       <br />
+      <br />
+      <Contact />
 
     </div>) :( 
     <Auth setIsAuth={setIsAuth} />

@@ -33,7 +33,7 @@
 
 .img-container {
   width: fit-content;
-  height: 150px;
+  height: 300px;
   overflow: hidden;
 
 }
@@ -55,7 +55,9 @@
 
 }
 
-.card__title {
+.card__title::selection {
+  background-color: #fff;
+  color: black;
 
 }
 
