@@ -25,7 +25,7 @@ export default function Nav() {
       <li><a href="#Proteins">Protiens</a></li>
       <li><a href="#Equipment">Equipements</a></li>
       <li><a href="#About">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
       </label>
       
     </ul>

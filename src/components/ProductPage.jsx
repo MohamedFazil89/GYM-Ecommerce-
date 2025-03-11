@@ -16,30 +16,26 @@ export default function ProductPage() {
       });
   }, []);
 
+  if (!data) return <p>Loading...</p>;
 
   return (
-    <>
-      {
-        <div>
-
-          !data ? (<h1 style={{ fontSize: "5rem", color:"white"}}>Loading.............</h1>) : (
-          <h2>Intake Items</h2>
-          <ul>
-            <div className="Cart-container" id='Equipment'>
-              {data.intakeItems.map((item, index) => (
-                <Cart
-                  key={index}
-                  img={item.img}
-                  price={item.price}
-                  title={item.title}
-                  description={item.description}
-                />
-              ))}
-            </div>
-          </ul>
-          )
-        </div>
-      }
-    </>
+    <div>
+      <p>Protein Items</p>
+      <ul>
+        
+        <div className="Cart-container" id='Equipment'>
+          {data.intakeItems.map((item, index) =>(
+            <Cart
+            key={index}
+            img={item.img}
+            price={item.price}
+            title={item.title}
+            description={item.description}
+             />
+          ))}
+          </div>
+        </ul>
+      
+    </div>
   );
 }
