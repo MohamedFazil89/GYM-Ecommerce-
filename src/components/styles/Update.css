@@ -1,150 +1,160 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all .5s;
-  }
-  
-  /* Update Container */
-  .Update-Conteiner {
-    margin-top: 25rem;
-    color: white;
-    overflow: hidden;
-    padding: 1rem;
-    transition: all 1s;
-  }
-  
-  /* Character Background Section */
-  .charecter-bg {
-    cursor: pointer;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all .5s;
+}
 
-    position: relative;
+/* Update Container */
+.Update-Conteiner {
+  margin-top: 25rem;
+  color: white;
+  overflow: hidden;
+  padding: 1rem;
+  transition: all 1s;
+}
+
+/* Character Background Section */
+.charecter-bg {
+  cursor: pointer;
+
+  position: relative;
+}
+
+/* Character Image */
+.charecter-bg > img {
+  position: relative;
+  z-index: 2;
+  width: 18%;
+  /* Optional max-width for very large screens */
+  max-width: 250px;
+  cursor: pointer;
+}
+
+.charecter-bg:hover > img{
+  margin-left: 65rem;
+  filter: drop-shadow(0 0 10px black);
+
+}
+
+
+/* Overlay Section at Bottom */
+.charecter-bg > .section {
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  height: 150px;
+  bottom: 0;
+  z-index: 1;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+
+}
+
+/* Title Overlaid on Character Background */
+.charecter-bg > .Title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 6rem;
+  left: 250px;
+  top: 10rem;
+  font-weight: lighter;
+}
+
+/* List Items in the Section */
+.charecter-bg > .section > li {
+  position: relative;
+  list-style-type: none;
+  z-index: 2;
+  color: black;
+  font-size: 2rem;
+  transform: scale(.5);
+
+}
+
+.charecter-bg:hover > .section > li {
+  color: red;
+  transform: scale(1);
+
+}
+
+
+/* Selection Styling for List Items */
+.section > li::selection {
+  color: red;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .Update-Conteiner {
+    margin-top: 15rem;
   }
-  
-  /* Character Image */
+  .charecter-bg > .Title {
+    font-size: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+  }
   .charecter-bg > img {
-    position: relative;
-    z-index: 2;
-    width: 18%;
-    /* Optional max-width for very large screens */
-    max-width: 250px;
-    cursor: pointer;
+    width: 25%;
+  }
+  .charecter-bg > .section {
+    height: 120px;
+    gap: 2rem;
+  }
+  .charecter-bg > .section > li {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .Update-Conteiner {
+    margin-top: 23rem;
+    padding: 0.5rem;
+  }
+  .charecter-bg > .Title {
+    font-size: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3rem;
+  }
+  .charecter-bg > img {
+    width: 35%;
+  }
+  .charecter-bg > .section {
+    height: 100px;
+    gap: 1rem;
+  }
+  .charecter-bg > .section > li {
+    font-size: 1.2rem;
   }
 
   .charecter-bg:hover > img{
-    margin-left: 65rem;
+    margin-left: 15rem;
 
   }
-  
-  /* Overlay Section at Bottom */
-  .charecter-bg > .section {
-    position: absolute;
-    background-color: #fff;
-    display: flex;
-    width: 100%;
-    height: 150px;
-    bottom: 0;
-    z-index: 1;
-    gap: 5rem;
-    justify-content: center;
-    align-items: center;
-    transition: all .5s;
+}
 
+
+@media (max-width: 400px) {
+  .charecter-bg > img{
+      width: 30%;
   }
-  
-  /* Title Overlaid on Character Background */
-  .charecter-bg > .Title {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-size: 6rem;
-    left: 250px;
-    top: 10rem;
-    font-weight: lighter;
-  }
-  
-  /* List Items in the Section */
-  .charecter-bg > .section > li {
-    position: relative;
-    list-style-type: none;
-    z-index: 2;
-    color: black;
-    font-size: 2rem;
-  }
-  
-  /* Selection Styling for List Items */
-  .section > li::selection {
-    color: red;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 1024px) {
-    .Update-Conteiner {
-      margin-top: 15rem;
-    }
-    .charecter-bg > .Title {
-      font-size: 4rem;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 5rem;
-    }
-    .charecter-bg > img {
-      width: 25%;
-    }
-    .charecter-bg > .section {
-      height: 120px;
-      gap: 2rem;
-    }
-    .charecter-bg > .section > li {
+  .charecter-bg > .Title{
       font-size: 1.5rem;
-    }
+      width: 90%;
+      left: 60%;
+      top: 10%;
   }
-  
-  @media (max-width: 600px) {
-    .Update-Conteiner {
-      margin-top: 23rem;
-      padding: 0.5rem;
-    }
-    .charecter-bg > .Title {
-      font-size: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 3rem;
-    }
-    .charecter-bg > img {
-      width: 35%;
-    }
-    .charecter-bg > .section {
-      height: 100px;
-      gap: 1rem;
-    }
-    .charecter-bg > .section > li {
-      font-size: 1.2rem;
-    }
-
-    .charecter-bg:hover > img{
-      margin-left: 15rem;
-  
-    }
+  .charecter-bg > .section > li{
+      font-size: 1rem;
+      left: 10%;
   }
 
-
-  @media (max-width: 400px) {
-    .charecter-bg > img{
-        width: 30%;
-    }
-    .charecter-bg > .Title{
-        font-size: 1.5rem;
-        width: 90%;
-        left: 60%;
-        top: 10%;
-    }
-    .charecter-bg > .section > li{
-        font-size: 1rem;
-        left: 10%;
-    }
-
-  }
-  
+}
