@@ -10,8 +10,8 @@ export default function Contact() {
           <p>
             Train like an anime hero with cutting-edge gym equipment and motivational fitness routines. Our facility is designed to empower you—whether you're just starting or looking to level up your training.
           </p>
-          <a href="#signup" className="btn-primary">
-            Join Now
+          <a href="/Contact" className="btn-primary">
+            Leave us a message
           </a>
         </div>
         <div className="content-image">

@@ -8,6 +8,7 @@ import Auth from "./Auth"
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import OrderPlace from "./components/OrderPlace";
+import Contact from "./Contact";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -20,6 +21,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Product" element={<ProductPage />} />
         <Route path="/ProductE" element={<ProductE />} />
         <Route path="/OrderPlace" element={<OrderPlace />} />
+        <Route path="/Contact" element={<Contact />} />
+
 
 
       </Routes>

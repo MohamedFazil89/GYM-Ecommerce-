@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cart from './Cart';
+import Nav from './Nav';
 export default function ProductPage() {
   const [data, setData] = useState([]);
 
@@ -24,6 +25,7 @@ export default function ProductPage() {
 
   return (
     <div>
+      <Nav />
       <p>Protien Items</p>
       <ul>
         
