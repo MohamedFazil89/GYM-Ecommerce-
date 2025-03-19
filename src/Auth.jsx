@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import "./components/styles/Auth.css"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Auth({ setIsAuth }) {
+  const navigate = useNavigate();
   const [isRegister, setIsRegister] = useState(false);
   const [userData, setUserData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
 
   // Handle input changes
   const handleChange = (e) => {
@@ -11,35 +15,39 @@ export default function Auth({ setIsAuth }) {
   };
 
   // Handle Login/Register
-  const handleAuth = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (isRegister) {
-      // Store user in localStorage (simulating a real database)
-      localStorage.setItem("user", JSON.stringify(userData));
-      alert("Registration successful! Please log in.");
-      setIsRegister(false); // Switch to login mode
-    } else {
-      // Retrieve stored user
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-
-      if (
-        storedUser &&
-        storedUser.email === userData.email &&
-        storedUser.password === userData.password
-      ) {
-        setIsAuth(true); // Grant access
-        localStorage.setItem("isAuth", "true"); // Save login state
-      } else {
-        alert("Invalid credentials! Please try again.");
-      }
+    const email = userData.email;
+    const password = userData.password;
+    try {
+      const response = await axios.post('http://localhost:5000/user/Register', { email, password });
+      console.log(response.data);
+      setIsRegister(!isRegister)
+    } catch (err) {
+      console.error(err);
+      setError('Error signing up. Please try again.');
+    }
+  };
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    const email = userData.email;
+    const password = userData.password;
+    try {
+      const response = await axios.post('http://localhost:5000/user/Login', { email, password });
+      console.log(response.data);
+      navigate('/Home');
+    } catch (err) {
+      console.error(err);
+      setError('Error signing up. Please try again.');
     }
   };
 
   return (
     <div className="auth-container">
       <h2>{isRegister ? "Register" : "Login"}</h2>
-      <form onSubmit={handleAuth}>
+      {error && <p className="error-message">{error}</p>}
+
+      <form onSubmit={isRegister ? handleSubmit : handleLoginSubmit}>
         <input
           type="email"
           name="email"
