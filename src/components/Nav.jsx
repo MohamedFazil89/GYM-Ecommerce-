@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./styles/Nav.css"
 import logo from "../assets/logo.png"
+import CardMenu from './CartMenu';
 
 export default function Nav() {
+  const [Card, setCard] = useState(false);
+  
+  const OpenCard = () =>{
+    setCard(!Card);
+  }
+
+
   return (
     <nav className="nav">
     <input type="checkbox" id="nav-check" />
@@ -26,6 +34,11 @@ export default function Nav() {
       <li><a href="#Equipment">Equipements</a></li>
       <li><a href="#About">About</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li className='Cart-btn'><a href="#" onClick={OpenCard}>Cart</a></li>
+
+      <div className="card-con">
+        <CardMenu width={ Card ? "40%": "0%"} OpenCard={OpenCard} BuyNow={() => console.log("CLICKED!!!!")}/>
+        </div>
       </label>
       
     </ul>

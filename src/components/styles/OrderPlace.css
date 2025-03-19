@@ -1,0 +1,257 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Root Variables for Theming */
+  :root {
+    --light-color: black; /* Light cyan background */
+    --dark-color: #3d6ec9;  /* Teal text and accents */
+    --text-color: #333;     /* Dark gray text */
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Order Confirmation Section */
+  .orderConfirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: var(--light-color);
+    text-align: center;
+  }
+  
+  .OrderTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Order Container */
+  .Order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  /* Ordered Cart Items */
+  .Ordered-Cart-items {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgb(37, 37, 37);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    transition: transform var(--transition-speed);
+  }
+  
+  .Ordered-Cart-items:hover {
+    transform: translateY(-5px);
+  }
+  .Ordered-Cart-items > h1{
+    color: white;
+  }
+  /* Ordered Card Item */
+  .Ordered-carditem {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+  }
+  
+  .Ordered-carditem:last-child {
+    border-bottom: none;
+  }
+  
+  .Ordered-Item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-right: 1rem;
+  }
+  
+  .Ordered-Card-details {
+    flex: 1;
+  }
+  
+  .Ordered-Name {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+  }
+  
+  .Ordered-Rate {
+    font-size: 1rem;
+    color: white;
+  }
+  
+  /* Ordered Total and Delivery */
+  .Ordered-Total,
+  .Ordered-deviler {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .Ordered-Total {
+    font-size: 1.5rem;
+  }
+  
+  .Ordered-deviler {
+    font-size: 1rem;
+  }
+  
+  /* Order History Title */
+  .Ordered-history-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    margin: 2rem 0 1rem;
+  }
+  
+  /* Ordered History Items */
+  .ordered-history-items {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .order-history {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: transform var(--transition-speed);
+  }
+  
+  .order-history:hover {
+    transform: translateY(-5px);
+  }
+  
+  .order-history-card {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+  }
+  
+  .order-history-card:last-child {
+    border-bottom: none;
+  }
+  
+  .order-history-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-right: 1rem;
+  }
+  
+  .order-history-details {
+    flex: 1;
+  }
+  
+  .order-history-title {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+  }
+  
+  .order-history-description {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .Ordered-Card-details {
+      flex: 1;
+    }
+  
+    .Ordered-Name {
+      font-size: 1rem;
+    }
+  
+    .Ordered-Rate {
+      font-size: 0.9rem;
+    }
+  
+    .Ordered-Total {
+      font-size: 1.2rem;
+    }
+  
+    .Ordered-deviler {
+      font-size: 0.9rem;
+    }
+  
+    .Ordered-history-title {
+      font-size: 1.5rem;
+    }
+  
+    .order-history-title {
+      font-size: 1rem;
+    }
+  
+    .order-history-description {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Mobile Devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .OrderTitle {
+      font-size: 2rem;
+    }
+  
+    .Ordered-Card-details {
+      flex: 1;
+    }
+  
+    .Ordered-Name {
+      font-size: 0.9rem;
+    }
+  
+    .Ordered-Rate {
+      font-size: 0.8rem;
+    }
+  
+    .Ordered-Total {
+      font-size: 1rem;
+    }
+  
+    .Ordered-deviler {
+      font-size: 0.8rem;
+    }
+  
+    .Ordered-history-title {
+      font-size: 1.2rem;
+    }
+  
+    .order-history-title {
+      font-size: 0.9rem;
+    }
+  
+    .order-history-description {
+      font-size: 0.7rem;
+    }
+  }
+  

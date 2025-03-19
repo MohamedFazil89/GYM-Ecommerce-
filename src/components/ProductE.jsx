@@ -2,19 +2,25 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cart from './Cart';
 export default function ProductPage() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
-      .then(response => {
-        // response.data contains { intakeItems, equipmentItems }
-        setData(response.data);
-        console.log(response.data);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  }, []);
+  
+  useEffect(() =>{
+    const FetchProduct = async () =>{
+      try{
+        const Response = await axios.get("http://localhost:5000/api/products")
+        console.log(Response.data.Product_Collection)
+        setData(Response.data.Product_Collection);
+  
+      }catch(err){
+        console.log(err)
+      }
+    }
+    FetchProduct()
+  },[])
+
+  const Equipment = data.filter((product) => product.type === "equipmentItems")
+
 
   if (!data) return <p>Loading...</p>;
 
@@ -24,7 +30,7 @@ export default function ProductPage() {
       <ul>
         
         <div className="Cart-container" id='Equipment'>
-          {data.equipmentItems.map((item, index) =>(
+          {Equipment.map((item, index) =>(
             <Cart
             key={index}
             img={item.img}
