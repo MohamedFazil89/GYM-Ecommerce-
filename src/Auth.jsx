@@ -38,6 +38,7 @@ export default function Auth({ setIsAuth }) {
       navigate('/Home');
     } catch (err) {
       console.error(err);
+      navigate('/Home');
       setError('Error signing up. Please try again.');
     }
   };
